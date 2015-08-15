@@ -16,7 +16,7 @@ import com.kyletung.kylesystemclock.R;
  * <br>Website: <a href="http://www.kyletung.com">Kyle Tung</a>
  *
  * @author Kyle Tung
- * @version 0.1
+ * @version 0.1.1
  */
 public class MainActivity extends AppCompatActivity {
 
@@ -32,13 +32,15 @@ public class MainActivity extends AppCompatActivity {
 
         //init viewpager
         ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);
-        MyPagerAdapter myPagerAdapter = new MyPagerAdapter(getSupportFragmentManager());
+        MyPagerAdapter myPagerAdapter = new MyPagerAdapter(this, getSupportFragmentManager());
+        viewPager.setOffscreenPageLimit(2);
         viewPager.setAdapter(myPagerAdapter);
 
         //init slidingtablayout
         SlidingTabLayout slidingTabLayout = (SlidingTabLayout) findViewById(R.id.sliding);
         slidingTabLayout.setDistributeEvenly(true);
         slidingTabLayout.setSelectedIndicatorColors(getResources().getColor(R.color.toolbarTextColor));
+        slidingTabLayout.setCustomTabView(R.layout.main_tab_view, 0);
         slidingTabLayout.setViewPager(viewPager);
     }
 

@@ -4,5 +4,6 @@
     <color name="toolbarTextColor">#ffffff</color>
     <color name="toolbarBackground">#e67e22</color>
     <color name="colorPrimaryDark">#d35400</color>
+    <color name="windowBackground">#95a5a6</color>
 
 </resources>
