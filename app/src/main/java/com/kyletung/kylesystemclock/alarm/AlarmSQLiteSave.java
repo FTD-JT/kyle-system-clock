@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -16,7 +17,7 @@ import java.util.List;
  * <br>Website: <a href="http://www.kyletung.com">Kyle Tung</a>
  *
  * @author Kyle Tung
- * @version 0.1
+ * @version 0.1.2
  */
 public class AlarmSQLiteSave {
 
@@ -42,8 +43,16 @@ public class AlarmSQLiteSave {
         List<AlarmData> list = new ArrayList<>();
         Cursor cursor = db.query("Alarm", null, null, null, null, null, null);
         while (cursor.moveToNext()) {
-            AlarmData alarmData = new AlarmData(cursor.getInt(cursor.getColumnIndex("year")), cursor.getInt(cursor.getColumnIndex("month")), cursor.getInt(cursor.getColumnIndex("day")), cursor.getInt(cursor.getColumnIndex("hour")), cursor.getInt(cursor.getColumnIndex("minute")), cursor.getInt(cursor.getColumnIndex("alarmSwitch")));
-            list.add(alarmData);
+            Calendar calendarGet = Calendar.getInstance();
+            Calendar calenderSet = Calendar.getInstance();
+            calenderSet.set(cursor.getInt(cursor.getColumnIndex("year")), cursor.getInt(cursor.getColumnIndex("month")), cursor.getInt(cursor.getColumnIndex("day")), cursor.getInt(cursor.getColumnIndex("hour")), cursor.getInt(cursor.getColumnIndex("minute")), 0);
+            if (calenderSet.getTimeInMillis() > calendarGet.getTimeInMillis()) {
+                AlarmData alarmData = new AlarmData(cursor.getInt(cursor.getColumnIndex("year")), cursor.getInt(cursor.getColumnIndex("month")), cursor.getInt(cursor.getColumnIndex("day")), cursor.getInt(cursor.getColumnIndex("hour")), cursor.getInt(cursor.getColumnIndex("minute")), cursor.getInt(cursor.getColumnIndex("alarmSwitch")));
+                list.add(alarmData);
+            } else {
+                AlarmData alarmData = new AlarmData(cursor.getInt(cursor.getColumnIndex("year")), cursor.getInt(cursor.getColumnIndex("month")), cursor.getInt(cursor.getColumnIndex("day")), cursor.getInt(cursor.getColumnIndex("hour")), cursor.getInt(cursor.getColumnIndex("minute")), 0);
+                list.add(alarmData);
+            }
         }
         cursor.close();
         return list;

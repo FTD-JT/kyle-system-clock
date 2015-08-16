@@ -9,10 +9,12 @@ import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.kyletung.kylesystemclock.R;
 
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -22,12 +24,12 @@ import java.util.List;
  * <br>Website: <a href="http://www.kyletung.com">Kyle Tung</a>
  *
  * @author Kyle Tung
- * @version 0.1
+ * @version 0.1.2
  */
 public class AlarmAdapter extends BaseAdapter {
 
     private List<AlarmData> list;
-
+    private AlarmMyManager alarmMyManager;
     private Context context;
     private AlarmSQLiteSave alarmSQLiteSave;
 
@@ -35,24 +37,51 @@ public class AlarmAdapter extends BaseAdapter {
         this.context = context;
         alarmSQLiteSave = new AlarmSQLiteSave(context);
         list = alarmSQLiteSave.initAlarm();
+        alarmMyManager = new AlarmMyManager(context, list);
     }
 
     public void addAlarm(AlarmData alarmData) {
-        alarmSQLiteSave.saveAlarm(alarmData);
-        list.add(alarmData);
-        notifyDataSetChanged();
+        Calendar calendarGet = Calendar.getInstance();
+        Calendar calendarSet = Calendar.getInstance();
+        calendarSet.set(alarmData.getYear(), alarmData.getMonth(), alarmData.getDay(), alarmData.getHour(), alarmData.getMinute(), 0);
+        if (calendarGet.getTimeInMillis() < calendarSet.getTimeInMillis() & alarmData.getYear() < 2100) {
+            alarmSQLiteSave.saveAlarm(alarmData);
+            alarmMyManager.addAlarmManager(alarmData);
+            list.add(alarmData);
+            notifyDataSetChanged();
+        } else {
+            Toast.makeText(context, "少年，无法时空穿越", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void removeAlarm(int position) {
         alarmSQLiteSave.deleteAlarm(list.get(position));
+        alarmMyManager.cancelAlarmManager(list.get(position));
         list.remove(position);
         notifyDataSetChanged();
     }
 
     public void changeAlarm(int position, int alarmSwitch) {
-        alarmSQLiteSave.updateAlarm(list.get(position), alarmSwitch);
-        list.get(position).setAlarmSwitch(alarmSwitch);
-        notifyDataSetChanged();
+        if (alarmSwitch == 1) {
+            Calendar calendarGet = Calendar.getInstance();
+            Calendar calendarSet = Calendar.getInstance();
+            calendarSet.set(list.get(position).getYear(), list.get(position).getMonth(), list.get(position).getDay(), list.get(position).getHour(), list.get(position).getMinute(), 0);
+            if (calendarGet.getTimeInMillis() < calendarSet.getTimeInMillis()) {
+                alarmSQLiteSave.updateAlarm(list.get(position), alarmSwitch);
+                alarmMyManager.addAlarmManager(list.get(position));
+                list.get(position).setAlarmSwitch(alarmSwitch);
+                notifyDataSetChanged();
+            } else {
+                Toast.makeText(context, "少年，这是过去的时间", Toast.LENGTH_SHORT).show();
+                list.get(position).setAlarmSwitch(0);
+                notifyDataSetChanged();
+            }
+        } else if (alarmSwitch == 0) {
+            alarmSQLiteSave.updateAlarm(list.get(position), alarmSwitch);
+            alarmMyManager.cancelAlarmManager(list.get(position));
+            list.get(position).setAlarmSwitch(alarmSwitch);
+            notifyDataSetChanged();
+        }
     }
 
     @Override

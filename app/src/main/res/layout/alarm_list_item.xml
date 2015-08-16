@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:padding="5dp"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:padding="5dp">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:longClickable="true"
         android:layout_height="match_parent"
-        android:elevation="5dp">
+        android:longClickable="true">
 
         <ImageView
-            android:contentDescription="@string/alarm_state"
             android:id="@+id/alarm_image"
             android:layout_width="72dp"
             android:layout_height="72dp"
             android:background="#d35400"
+            android:contentDescription="@string/alarm_state"
             android:padding="10dp"
             android:src="@drawable/ic_alarm_on_white" />
 
@@ -33,16 +32,16 @@
                 android:id="@+id/alarm_time"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/toolbarTextColor"
                 android:text="@string/alarm_time"
+                android:textColor="@color/toolbarTextColor"
                 android:textSize="25sp" />
 
             <TextView
                 android:id="@+id/alarm_date"
-                android:textColor="@color/toolbarTextColor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/alarm_date"
+                android:textColor="@color/toolbarTextColor"
                 android:textSize="18sp" />
 
         </LinearLayout>

@@ -1,8 +1,10 @@
 package com.kyletung.kylesystemclock.alarm;
 
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -25,7 +27,7 @@ import java.util.Calendar;
  * <br>Website: <a href="http://www.kyletung.com">Kyle Tung</a>
  *
  * @author Kyle Tung
- * @version 0.1
+ * @version 0.1.2
  */
 public class AlarmFragment extends Fragment {
 
@@ -50,9 +52,18 @@ public class AlarmFragment extends Fragment {
         //set listener
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                System.out.println(">>> long click at list item <<<");
-                alarmAdapter.removeAlarm(position);
+            public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
+                AlertDialog.Builder dialog = new AlertDialog.Builder(getActivity());
+                dialog.setTitle("确认删除");
+                dialog.setMessage("是否要删除此项闹钟？");
+                dialog.setCancelable(true);
+                dialog.setPositiveButton("确认", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        alarmAdapter.removeAlarm(position);
+                    }
+                });
+                dialog.show();
                 return true;
             }
         });

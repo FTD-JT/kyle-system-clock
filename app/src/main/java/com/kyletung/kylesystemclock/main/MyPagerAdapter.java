@@ -32,7 +32,7 @@ public class MyPagerAdapter extends FragmentPagerAdapter {
     StopwatchFragment stopwatchFragment = new StopwatchFragment();
 
     String[] titles = {"Alarm", "Timer", "StopWatch"};
-    int[] imageTitles = {R.drawable.ic_access_alarm_white, R.drawable.ic_history_white, R.drawable.ic_history_white};
+    int[] imageTitles = {R.drawable.ic_access_alarm_white, R.drawable.ic_history_white, R.drawable.ic_timer_white};
 
     public MyPagerAdapter(Context context, FragmentManager fm) {
         super(fm);
