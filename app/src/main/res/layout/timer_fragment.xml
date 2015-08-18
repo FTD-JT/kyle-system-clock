@@ -1,9 +1,104 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" tools:context="com.kyletung.viewpagertest.timer.TimerFragment">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <LinearLayout
+        android:id="@+id/timer_button_bar"
+        style="?android:buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/timer_reset"
+            style="?android:buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/timer_reset" />
+
+        <Button
+            android:id="@+id/timer_start"
+            style="?android:buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/timer_start" />
+
+        <Button
+            android:id="@+id/timer_set"
+            style="?android:buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/timer_set" />
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/timer_button_bar">
+
+        <TextView
+            android:id="@+id/timer_minute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="00"
+            android:textColor="@color/timerTextColor"
+            android:textSize="96sp" />
+
+        <TextView
+            android:id="@+id/timer_hour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/timer_minute"
+            android:layout_centerHorizontal="true"
+            android:text="00"
+            android:textColor="@color/timerTextColor"
+            android:textSize="48sp" />
+
+        <TextView
+            android:id="@+id/timer_second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/timer_minute"
+            android:layout_centerHorizontal="true"
+            android:text="00"
+            android:textColor="@color/timerTextColor"
+            android:textSize="64sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/timer_second"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/timer_second"
+            android:text="Second"
+            android:textColor="@color/timerTextColor" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/timer_hour"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/timer_hour"
+            android:text="Hour"
+            android:textColor="@color/timerTextColor" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/timer_minute"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/timer_minute"
+            android:text="Minute"
+            android:textColor="@color/timerTextColor" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

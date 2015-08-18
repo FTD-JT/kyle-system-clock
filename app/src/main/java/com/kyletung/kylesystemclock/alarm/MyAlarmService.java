@@ -20,7 +20,7 @@ import android.view.WindowManager;
  * <br>Website: <a href="http://www.kyletung.com">Kyle Tung</a>
  *
  * @author Kyle Tung
- * @version Input Version
+ * @version 0.1.3
  */
 public class MyAlarmService extends Service {
 

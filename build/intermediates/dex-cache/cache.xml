@@ -2,11 +2,11 @@
 <items version="2" >
 
     <item
-        jar="/home/kyle/Works/KyleSystemClock/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/jars/classes.jar"
+        jar="/home/kyle/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.1/support-annotations-22.2.1.jar"
         jumboMode="false"
-        revision="22.0.1"
-        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
-        <dex dex="/home/kyle/Works/KyleSystemClock/app/build/intermediates/pre-dexed/debug/classes-88ff6b8972d8579d9fec4e7ac5f76721e85e53da.jar" />
+        revision="22.0.1" sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
+        <dex
+            dex="/home/kyle/Works/KyleSystemClock/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.1-ffe264fe0f2418f31f18d27e9ac2503dc3488dac.jar" />
     </item>
     <item
         jar="/home/kyle/Works/KyleSystemClock/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/libs/internal_impl-22.2.1.jar"
@@ -23,11 +23,17 @@
         <dex dex="/home/kyle/Works/KyleSystemClock/app/build/intermediates/pre-dexed/debug/classes-a14f67af2475f772edc804410e3f66832d999066.jar" />
     </item>
     <item
-        jar="/home/kyle/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.1/support-annotations-22.2.1.jar"
+        jar="/home/kyle/Works/KyleSystemClock/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/22.2.1/jars/classes.jar"
         jumboMode="false"
-        revision="22.0.1"
-        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
-        <dex dex="/home/kyle/Works/KyleSystemClock/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.1-ffe264fe0f2418f31f18d27e9ac2503dc3488dac.jar" />
+        revision="22.0.1" sha1="e1fa5e1123997a55e3ed65b44892993ff4b58cfe">
+        <dex
+            dex="/home/kyle/Works/KyleSystemClock/app/build/intermediates/pre-dexed/debug/classes-add8457998c0bb19e5e53c52cbafd07af5ef97a5.jar" />
+    </item>
+    <item
+        jar="/home/kyle/Works/KyleSystemClock/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/jars/classes.jar"
+        jumboMode="false" revision="22.0.1" sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
+        <dex
+            dex="/home/kyle/Works/KyleSystemClock/app/build/intermediates/pre-dexed/debug/classes-88ff6b8972d8579d9fec4e7ac5f76721e85e53da.jar" />
     </item>
 
 </items>
