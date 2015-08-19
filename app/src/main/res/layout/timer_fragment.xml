@@ -22,6 +22,8 @@
             android:id="@+id/timer_start"
             style="?android:buttonBarButtonStyle"
             android:layout_width="0dp"
+            android:textSize="24sp"
+            android:textColor="@color/colorPrimaryDark"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/timer_start" />

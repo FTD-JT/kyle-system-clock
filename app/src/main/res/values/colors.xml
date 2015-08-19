@@ -6,5 +6,6 @@
     <color name="colorPrimaryDark">#d35400</color>
     <color name="windowBackground">#95a5a6</color>
     <color name="timerTextColor">#ffffff</color>
+    <color name="recyclerViewList">#ecf0f1</color>
 
 </resources>

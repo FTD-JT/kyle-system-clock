@@ -20,7 +20,7 @@ import com.kyletung.kylesystemclock.R;
  * <br>Website: <a href="http://www.kyletung.com">Kyle Tung</a>
  *
  * @author Kyle Tung
- * @version 0.1.3
+ * @version 0.1.4
  */
 public class TimerFragment extends Fragment {
 
@@ -56,6 +56,10 @@ public class TimerFragment extends Fragment {
         timerHour = (TextView) view.findViewById(R.id.timer_hour);
         timerMinute = (TextView) view.findViewById(R.id.timer_minute);
         timerSecond = (TextView) view.findViewById(R.id.timer_second);
+
+        //
+        timerStart.setEnabled(false);
+        timerReset.setEnabled(false);
 
         //set timer
         timerSet.setOnClickListener(new View.OnClickListener() {
@@ -128,6 +132,8 @@ public class TimerFragment extends Fragment {
                     timerSecond.setText(second + "");
                 }
                 timerRun = new TimerRun(getActivity(), getAllTime(hour, minute, second), timerHour, timerMinute, timerSecond);
+                timerReset.setEnabled(true);
+                timerStart.setEnabled(true);
             }
         }
     }

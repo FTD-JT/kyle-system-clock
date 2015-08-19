@@ -16,5 +16,8 @@
     <string name="timer_reset">Reset</string>
     <string name="timer_start">Start</string>
     <string name="timer_set">Set</string>
+    <string name="stop_clear">Clear</string>
+    <string name="stop_start">Start</string>
+    <string name="stop_record">Record</string>
 
 </resources>
