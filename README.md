@@ -2,6 +2,12 @@
 
 个人作品，仿照 Android 系统时钟进行编程，试图在能力范围内尽可能实现完善的闹钟、秒表和计时器的功能。
 
+---
+
+2015-9-22 优化了界面，全部中文化
+
+---
+
 2015-8-19 完成了 StopWatch 功能，优化了界面细节。
 
 1. 掌握了 RecyclerView 的基本用法
@@ -29,3 +35,15 @@
 1. 充分了解并学习了 SQLite 的创建与运用
 2. 对于 ListView 的使用更加熟练
 3. 熟练掌握了 ViewPger + Toolbar + SlidingTabLayout 建立应用架构的用法
+
+---
+
+下面是项目的截图：
+
+[设置闹钟](https://github.com/KyleTung/kyle-system-clock/blob/master/Screenshot_2015-09-22-17-21-21.png)
+
+[闹钟列表](https://github.com/KyleTung/kyle-system-clock/blob/master/Screenshot_2015-09-22-17-22-32.png)
+
+[秒表界面](https://github.com/KyleTung/kyle-system-clock/blob/master/Screenshot_2015-09-22-17-23-21.png)
+
+[设置计时器](https://github.com/KyleTung/kyle-system-clock/blob/master/Screenshot_2015-09-22-17-23-54.png)
