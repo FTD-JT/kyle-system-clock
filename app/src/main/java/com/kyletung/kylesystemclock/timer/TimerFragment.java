@@ -68,7 +68,7 @@ public class TimerFragment extends Fragment {
                 Intent intent = new Intent(getActivity(), TimerSetActivity.class);
                 startActivityForResult(intent, 1);
 
-                timerStart.setText("Start");
+                timerStart.setText("开始");
                 START_STATE = 1;
             }
         });
@@ -78,11 +78,11 @@ public class TimerFragment extends Fragment {
 
                 if (START_STATE == 1) {
                     timerRun.resume();
-                    timerStart.setText("Stop");
+                    timerStart.setText("停止");
                     START_STATE = 0;
                 } else if (START_STATE == 0) {
                     timerRun.stop();
-                    timerStart.setText("Resume");
+                    timerStart.setText("继续");
                     START_STATE = 1;
                 }
             }
@@ -95,7 +95,7 @@ public class TimerFragment extends Fragment {
                 timerMinute.setText(minute + "");
                 timerSecond.setText(second + "");
 
-                timerStart.setText("Start");
+                timerStart.setText("开始");
                 START_STATE = 1;
             }
         });
@@ -104,7 +104,6 @@ public class TimerFragment extends Fragment {
     }
 
     public long getAllTime(int hour, int minute, int second) {
-        System.out.println("set time is " + hour + "-" + minute + "-" + second);
         return (long) (hour * 60 * 60 + minute * 60 + second);
     }
 

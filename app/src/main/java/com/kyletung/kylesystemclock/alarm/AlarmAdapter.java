@@ -94,8 +94,8 @@ public class AlarmAdapter extends BaseAdapter {
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-        holder.time.setText(list.get(position).getHour() + " H / " + list.get(position).getMinute() + " M");
-        holder.date.setText(list.get(position).getYear() + " Y / " + (list.get(position).getMonth() + 1) + " M / " + list.get(position).getDay() + " D");
+        holder.time.setText(list.get(position).getHour() + " 时 / " + list.get(position).getMinute() + " 分");
+        holder.date.setText(list.get(position).getYear() + " 年 / " + (list.get(position).getMonth() + 1) + " 月 / " + list.get(position).getDay() + " 日");
         if (list.get(position).getAlarmSwitch() == 1) {
             holder.alarmSwitch.setChecked(true);
             holder.image.setImageResource(R.drawable.ic_alarm_on_white);

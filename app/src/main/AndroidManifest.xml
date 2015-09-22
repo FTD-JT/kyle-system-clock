@@ -20,21 +20,21 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".alarm.BootInitAlarmReceiver">
+        <receiver android:name=".alarm.BootInitAlarmReceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
 
-        <service android:name=".alarm.MyAlarmService">
+        <service android:name=".alarm.MyAlarmService" >
         </service>
-        <service android:name=".alarm.MyBootService">
+        <service android:name=".alarm.MyBootService" >
         </service>
 
         <activity
             android:name=".timer.TimerSetActivity"
-            android:theme="@style/Theme.AppCompat.Dialog"
-            android:label="@string/title_activity_timer_set"></activity>
+            android:label="@string/title_activity_timer_set"
+            android:theme="@style/Theme.AppCompat.Dialog" />
     </application>
 
 </manifest>

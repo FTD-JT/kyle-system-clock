@@ -3,13 +3,11 @@ package com.kyletung.kylesystemclock.stopwatch;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.kyletung.kylesystemclock.R;
@@ -28,7 +26,8 @@ public class StopwatchFragment extends Fragment {
 
     private static int STOP_STATE = 1;
 
-    private RecyclerView recyclerView;
+//    private RecyclerView recyclerView;
+    private ListView listview;
 
     private Button stopStart;
     private Button stopRecord;
@@ -60,23 +59,21 @@ public class StopwatchFragment extends Fragment {
         stopMilles = (TextView) view.findViewById(R.id.stop_milles);
         stopTimerTask = new StopTimerTask(stopHour, stopMinute, stopSecond, stopMilles);
         //
-        recyclerView = (RecyclerView) view.findViewById(R.id.stop_recycler_view);
         stopRecordAdapter = new StopRecordAdapter(getActivity());
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(stopRecordAdapter);
-        //
+        listview = (ListView) view.findViewById(R.id.stop_recycler_view);
+        listview.setDividerHeight(0);
+        listview.setAdapter(stopRecordAdapter);
+
         stopStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (STOP_STATE == 1) {
                     stopTimerTask.start();
-                    stopStart.setText("Pause");
+                    stopStart.setText("暂停");
                     STOP_STATE = 0;
                 } else if (STOP_STATE == 0) {
                     stopTimerTask.stop();
-                    stopStart.setText("Resume");
+                    stopStart.setText("继续");
                     STOP_STATE = 1;
                 }
             }
@@ -85,6 +82,7 @@ public class StopwatchFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 stopRecordAdapter.add(stopTimerTask.getTime());
+                listview.setSelection(stopRecordAdapter.getCount() - 1);
             }
         });
         stopClear.setOnClickListener(new View.OnClickListener() {
@@ -92,7 +90,7 @@ public class StopwatchFragment extends Fragment {
             public void onClick(View v) {
                 stopTimerTask.clear();
                 stopRecordAdapter.clear();
-                stopStart.setText("Start");
+                stopStart.setText("开始");
                 STOP_STATE = 1;
             }
         });
