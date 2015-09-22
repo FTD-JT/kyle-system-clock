@@ -40,10 +40,10 @@
 
 下面是项目的截图：
 
-[设置闹钟](https://github.com/KyleTung/kyle-system-clock/blob/master/Screenshot_2015-09-22-17-21-21.png)
+![设置闹钟](https://github.com/KyleTung/kyle-system-clock/blob/master/Screenshot_2015-09-22-17-21-21.png)
 
-[闹钟列表](https://github.com/KyleTung/kyle-system-clock/blob/master/Screenshot_2015-09-22-17-22-32.png)
+![闹钟列表](https://github.com/KyleTung/kyle-system-clock/blob/master/Screenshot_2015-09-22-17-22-32.png)
 
-[秒表界面](https://github.com/KyleTung/kyle-system-clock/blob/master/Screenshot_2015-09-22-17-23-21.png)
+![秒表界面](https://github.com/KyleTung/kyle-system-clock/blob/master/Screenshot_2015-09-22-17-23-21.png)
 
-[设置计时器](https://github.com/KyleTung/kyle-system-clock/blob/master/Screenshot_2015-09-22-17-23-54.png)
+![设置计时器](https://github.com/KyleTung/kyle-system-clock/blob/master/Screenshot_2015-09-22-17-23-54.png)
