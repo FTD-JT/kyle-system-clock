@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-
-    <color name="toolbarTextColor">#ffffff</color>
-    <color name="toolbarBackground">#e67e22</color>
-    <color name="colorPrimaryDark">#d35400</color>
-    <color name="timerTextColor">#777777</color>
-
-</resources>
